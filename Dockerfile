@@ -52,3 +52,8 @@ RUN mkdir -p /ComfyUI/models/loras && \
     wget --tries=3 --retry-connrefused --waitretry=5 \
          -O /ComfyUI/models/loras/low_noise_model.safetensors \
          https://huggingface.co/lightx2v/Wan2.2-Lightning/resolve/main/Wan2.2-T2V-A14B-4steps-lora-rank64-Seko-V1.1/low_noise_model.safetensors
+
+# -----------------------------------------------------------
+# 🔗 Fix for serverless environments without a network volume
+# -----------------------------------------------------------
+RUN mkdir -p /runpod-volume && ln -s /comfyui/models /runpod-volume/models
