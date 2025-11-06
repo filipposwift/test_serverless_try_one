@@ -34,10 +34,10 @@ RUN mkdir -p /comfyui/models/text_encoders /comfyui/models/vae /comfyui/models/d
 # -----------------------------------------------------------
 # 3️⃣ Download Upscaler
 # -----------------------------------------------------------
-RUN mkdir -p /comfyui/models/upscale && \
+RUN mkdir -p /comfyui/models/upscale_models && \
     echo "⬇️ Downloading Upscaler..." && \
     wget --tries=3 --retry-connrefused --waitretry=5 \
-         -O /comfyui/models/upscale/4x_NMKD-Siax_200k.pth \
+         -O /comfyui/models/upscale_models/4x_NMKD-Siax_200k.pth \
          https://huggingface.co/Akumetsu971/SD_Anime_Futuristic_Armor/resolve/main/4x_NMKD-Siax_200k.pth
 
 # -----------------------------------------------------------
